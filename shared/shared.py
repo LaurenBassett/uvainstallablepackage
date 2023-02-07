@@ -23,3 +23,16 @@ def space_compress(stocomp):
 
 def new_func():
     pass
+
+def Obnoxious_Edit(str_word):
+    res = ""
+    for i in range(len(str_word)):
+        if str_word[i].upper() == "I":
+            res = res + str_word[i].lower()
+        elif str_word[i].upper() == "L":
+            res = res + str_word[i].upper()
+        elif i % 2: 
+            res = res + str_word[i].upper()
+        else:
+            res = res + str_word[i].lower()
+    return res
