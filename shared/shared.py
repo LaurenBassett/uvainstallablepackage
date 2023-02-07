@@ -31,8 +31,34 @@ def Obnoxious_Edit(str_word):
             res = res + str_word[i].lower()
         elif str_word[i].upper() == "L":
             res = res + str_word[i].upper()
+        elif str_word[i].upper() == "E":
+            res = res + "333"
+        elif str_word[i].upper() == "O":
+            res = res + "0"
+        elif str_word[i].upper() == "A":
+            res = res + "@"
+        elif str_word[i].upper() == "Y":
+            res = res + "ii"
         elif i % 2: 
-            res = res + str_word[i].upper()
-        else:
             res = res + str_word[i].lower()
+        else:
+            res = res + str_word[i].upper()
     return res
+
+def PigLatinify(str_word):
+    sentence = str_word.split()
+    new = ""
+    for word in sentence:
+        if word[0].upper() in ['A','E', 'I', 'O', 'U']:
+            P =  word.lower() + "way"
+        elif word[0:2].upper() in ['SH', 'ST', 'SM',  'GL', 'TH', 'FL', 'QU']:
+            P = word[2:] + word[0:2].lower() + "ay"
+        else:
+            P = word[1:] + word[0].lower() + "ay"
+        new = new + str(P) + " "
+
+    return new
+
+
+ 
+
